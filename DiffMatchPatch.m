@@ -1443,17 +1443,17 @@ NS_INLINE NSString * diff_charsToTokenString(NSString *charsString, NSArray *tok
     [text replaceOccurrencesOfString:@">" withString:@"&gt;" options:NSLiteralSearch range:NSMakeRange(0, text.length)];
     [text replaceOccurrencesOfString:@"\n" withString:@"&para;<br>" options:NSLiteralSearch range:NSMakeRange(0, text.length)];
 
-    switch (aDiff.operation) {
-      case DIFF_INSERT:
-        [html appendFormat:@"<ins style=\"background:#e6ffe6;\">%@</ins>", text];
-        break;
-      case DIFF_DELETE:
-        [html appendFormat:@"<del style=\"background:#ffe6e6;\">%@</del>", text];
-        break;
-      case DIFF_EQUAL:
-        [html appendFormat:@"<span>%@</span>", text];
-        break;
-    }
+      switch (aDiff.operation) {
+          case DIFF_INSERT:
+              [html appendFormat:@"<ins style=\"background:#F8D408;font-size:17;text-decoration:none;font-family:Worksans-Regular\">%@</ins>", text];
+              break;
+          case DIFF_DELETE:
+              [html appendFormat:@"<del style=\"font-size:17;font-family:Worksans-Regular\">%@</del>", text];
+              break;
+          case DIFF_EQUAL:
+              [html appendFormat:@"<span style=\"font-size:17;text-decoration:none;font-family:Worksans-Regular\">%@</span>", text];
+              break;
+      }
   }
   return html;
 }
